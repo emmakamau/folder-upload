@@ -1,12 +1,10 @@
 using System;
 namespace folder_upload.Models;
 
-public class FileItem : IResource
+public class FileItem
 {
-    public Guid Id { get; set;}
-    public ResourcePath Path { get; set; }
-    public bool IsUserUploaded { get; set; }
-
-    public string Name => Path.FileName;
-    public ResourceType Type => ResourceType.File;
+    public Guid Id { get; set; }
+    public string FileName { get; set; }
+    public Guid FolderId { get; set; }
+    public FolderItem? Folder { get; set; }
 }
